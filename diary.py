@@ -53,7 +53,6 @@ key = base64.urlsafe_b64encode(key)
 
 fernet = Fernet(key)
 
-
 path = argv[1]
 
 err = None
@@ -91,7 +90,7 @@ except:
     print("can't encrypt data")
     err = e
 
-if True:
-    print(e)
+if err:
+    print(err)
     while True:
         pass
