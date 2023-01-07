@@ -1,0 +1,1 @@
+python D:\Codes\diary\diary.py %1
