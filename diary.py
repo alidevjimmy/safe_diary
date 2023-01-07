@@ -58,11 +58,11 @@ path = argv[1]
 err = None
 
 try:
-    f = open(path, "r")
+    f = open(path, "r", encoding="utf8")
     cipher = f.read()
     f.close()
 
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf8") as f:
         f.write(fernet.decrypt(cipher.encode("utf-8")).decode("utf-8"))
 
 except Exception as e:
@@ -79,11 +79,11 @@ try:
         if f.poll() is not None:
             break
 
-    f = open(path, "r")
+    f = open(path, "r", encoding="utf8")
     plain = f.read()
     f.close()
 
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf8") as f:
         f.write(fernet.encrypt(plain.encode("utf-8")).decode("utf-8"))
 
 except:
